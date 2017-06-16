@@ -49,11 +49,13 @@ $(document).ready(function() {
     var newPizza = new Pizza(inputtedPizzaSize, inputtedPizzaCrust, inputtedMeatType, inputtedToppingType, 0);
     console.log(newPizza);
     $("#results").append("Your Cost is:" + "  " + newPizza.calculateCost() + "$");
+    $("#results").show();
 
     $("#ordered").empty();
     var newOrder = new Order(inputtedPizzaSize, inputtedPizzaCrust, inputtedMeatType, inputtedToppingType, 0);
     console.log(newOrder);
     $("#ordered").append(newOrder.createOrder());
+    $("#ordered").show();
 
     $("#order_button").click(function(){
     console.log("order");

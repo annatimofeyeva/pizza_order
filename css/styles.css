@@ -47,6 +47,7 @@ body{
   font-style: italic;
   font-family: cursive;
   color: #f28f52;
+  display: none;
 }
 #results{
   font-size: 25px;
@@ -54,4 +55,5 @@ body{
   font-style: italic;
   font-family: cursive;
   color: #f28f52;
+  display: none;
 }

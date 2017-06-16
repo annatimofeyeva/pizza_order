@@ -2,7 +2,7 @@
 
 #### By _**Anna Timofeeva**_
 
-####_Order your Pizza!_
+#### _Order your Pizza!_
 
 Website for a pizza company where a user can choose one or more individual toppings (cheese, pepperoni, artichoke, anchovy, etc) and a size to order a pizza and see the final cost.
 

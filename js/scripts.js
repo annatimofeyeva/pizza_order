@@ -7,6 +7,14 @@ function Pizza (sizes, meats, toppings, crunch, cost){
   this.cost = cost;
 }
 
+function Order(sizes, meats, toppings, crunch, result){
+  this.sizes = sizes;
+  this.toppings = toppings;
+  this.meats = meats;
+  this.crunch = crunch;
+  this.result = result;
+}
+
 Pizza.prototype.calculateCost = function(){
   if (this.sizes === "large"){
     this. cost += 15;
@@ -18,10 +26,12 @@ Pizza.prototype.calculateCost = function(){
     return this.cost
   };
 
-//function Order ();
+Order.prototype.createOrder = function(){
+  if(this.sizes === "large" && this.crunch === "handmade pan" && this.meats === "bacon" && this.topping === "cheddar cheese"){
+  } return "Your Order:   large handmade pan pizza with becon and cheddar cheese"
+};
 
 //User interface logic:
-
 $(document).ready(function() {
   $("form").submit(function(event) {
     event.preventDefault();
@@ -35,15 +45,19 @@ $(document).ready(function() {
     var inputtedToppingType = $("select#pizza_toppings").val();
     console.log(inputtedToppingType);
 
+    $("#results").empty();
     var newPizza = new Pizza(inputtedPizzaSize, inputtedPizzaCrust, inputtedMeatType, inputtedToppingType, 0);
     console.log(newPizza);
-    $("#results").append("<h3> You cost is:" + "  " + newPizza.calculateCost() + "$" +  "</h3");
+    $("#results").append("Your Cost is:" + "  " + newPizza.calculateCost() + "$");
+
+    $("#ordered").empty();
+    var newOrder = new Order(inputtedPizzaSize, inputtedPizzaCrust, inputtedMeatType, inputtedToppingType, 0);
+    console.log(newOrder);
+    $("#ordered").append(newOrder.createOrder());
 
     $("#order_button").click(function(){
     console.log("order");
     $("#ordered_message").show();
-
-
 
 });
 });

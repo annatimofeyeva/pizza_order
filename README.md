@@ -22,13 +22,6 @@ Website for a pizza company where a user can choose one or more individual toppi
 
 4. App will display dropdown menu for choosing a main component
 
-5. App will save deposit or withdrawal amount as variable in js, upon 'update' button - DONE
-
-6. app will perform backend logic, adding deposit amount to initial deposit - DONE
-
-7. App will perform backend logic, subtracting withdrawal amount from initial deposit - DONE
-
-8. App will display current balance on 'check balance' submit button
 
 ## What's included
 Within the repository you'll find the following directories and files:

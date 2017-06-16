@@ -26,13 +26,32 @@ body{
   border-color: #996434;
   background-color: #efdece;
   width: 15%;
+  color: #e85d06;
+  font-size: 22px;
+  border-width: 5px;
+  border-color: #7f3202;
+  border-radius: 10px;
 }
 #ordered_message{
   margin-top: 30px;
   width: 30%;
-  font-size: 18px;
+  font-size: 20px;
   border-radius: 10px;
   border-width: 10px;
   font-color: #703a08;
   display: none;
   }
+#ordered{
+  font-size: 25px;
+  font-weight: bold;
+  font-style: italic;
+  font-family: cursive;
+  color: #f28f52;
+}
+#results{
+  font-size: 25px;
+  font-weight: bold;
+  font-style: italic;
+  font-family: cursive;
+  color: #f28f52;
+}

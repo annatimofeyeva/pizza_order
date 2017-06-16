@@ -9,11 +9,9 @@
   </head>
 <body>
   <div class="container">
-    <h1>Order your Pizza!</h1>
+  <h1><span id="title">Order your Pizza!</span></h1>
+  <h1><span id="customization">Build your own pizza!</span></h1>
   <div class="well">
-    <p>Initial costs:  small: XX$ medium: XXX$ large: XXXX$
-  </div>
-  <h3>Build your own pizza!</h3>
   <form>
     <div class="form-group">
       <label id="type_" for="company">What size?</label>
@@ -24,25 +22,48 @@
       </select>
     </div>
     <div class="form-group">
+      <label id="type_" for="company">What crusts?</label>
+      <select class="form-control" id="pizza_crusts">
+        <option>handmade pan</option>
+        <option>crunchy thin crust</option>
+        <option>gluten free crust</option>
+      </select>
+    </div>
+    <div class="form-group">
       <label id="type_meats" for="company">What meats?</label>
       <select class="form-control" id="pizza_meats">
         <option>bacon</option>
-        <option>italian Sausage</option>
-        <option>premium Chicken</option>
+        <option>italian sausage</option>
+        <option>premium chicken</option>
       </select>
     </div>
     <div class="form-group">
       <label id="type_toppings" for="company">What toppings?</label>
       <select class="form-control" id="pizza_toppings">
-        <option>cheese</option>
-        <option>pepperoni</option>
+        <option>cheddar cheesee</option>
+        <option>feta cheesee</option>
+        <option>mushrooms</option>
         <option>artichoke</option>
         <option>anchovy</option>
+        <option>pineapple</option>
       </select>
     </div>
-    <button type="submit" class="btn" id="calculate_button">Calculate the cost!</button>
+    <button type="submit" class="btn btn-lg" id="calculate_button">Calculate the cost!</button>
   </form>
-  <div class="well" id="results">
   </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="well" id="ordered"></div>
+    </div>
+    <div class="col-md-6">
+      <div class="well" id="results"></div>
+    </div>
+</div>
+<button type="submit" class="btn btn-lg" id="order_button">Order!</button>
+<div id="ordered_message" class="alert alert-warning alert-dismissible fade in" role="alert"    auto-close="3000">
+  <button type="button" class="close" data-hide="alert" aria-label="Close"><span aria-hidden="true">&times;</span>
+  </button> Your order is submitted!<br>Yours pizza is on it's way!</br>
+</div>
+</div>
 </body>
 </html>

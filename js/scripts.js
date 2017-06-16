@@ -1,24 +1,26 @@
 //business logic
-function Pizza (sizes, meats, toppings, cost){
+function Pizza (sizes, meats, toppings, crunch, cost){
   this.sizes = sizes;
   this.toppings = toppings;
   this.meats = meats;
+  this.crunch = crunch;
   this.cost = cost;
 }
 
 Pizza.prototype.calculateCost = function(){
- if (inputtedPizzaSize === "large"){
-   this. cost += 4;
- } else if (inputtedPizzaSize === "medium"){
-   this.cost += 3;
- } else {
-   this.cost += 2;
-}
-  return this.cost
-};
+  if (this.sizes === "large"){
+    this. cost += 15;
+  } else if (this.sizes === "medium"){
+       this.cost += 13;
+  } else {
+       this.cost += 10;
+  }
+    return this.cost
+  };
+
+//function Order ();
 
 //User interface logic:
-
 
 $(document).ready(function() {
   $("form").submit(function(event) {
@@ -26,50 +28,23 @@ $(document).ready(function() {
     $("#results").empty();
     var inputtedPizzaSize = $("select#pizza_sizes").val();
     console.log(inputtedPizzaSize);
+    var inputtedPizzaCrust = $("select#pizza_crusts").val();
+    console.log(inputtedPizzaCrust);
     var inputtedMeatType = $("select#pizza_meats").val();
     console.log(inputtedMeatType);
     var inputtedToppingType = $("select#pizza_toppings").val();
     console.log(inputtedToppingType);
 
-
-
-
-    Pizza.prototype.calculateCost = function(){
-     if (inputtedPizzaSize === "large"){
-       this. cost += 4;
-     } else if (inputtedPizzaSize === "medium"){
-       this.cost += 3;
-     } else {
-       this.cost += 2;
-    }
-      return this.cost
-    };
-
-
-
-
-
-    var newPizza = new Pizza(inputtedPizzaSize, inputtedMeatType, inputtedToppingType, 0);
+    var newPizza = new Pizza(inputtedPizzaSize, inputtedPizzaCrust, inputtedMeatType, inputtedToppingType, 0);
     console.log(newPizza);
-    $("#results").append("<h3> You cost is:" + "  " + newPizza.calculateCost() + "</h3");
-    $("#results").show
+    $("#results").append("<h3> You cost is:" + "  " + newPizza.calculateCost() + "$" +  "</h3");
 
-
+    $("#order_button").click(function(){
+    console.log("order");
+    $("#ordered_message").show();
 
 
 
 });
 });
-
-
-
-
-/*$(document).ready(function(){
-    $("form").submit(function(event){
-    event.PreventDefault();
-    var inputtedSizes = $("form-control#pizza_sizes").val();
-    console.log(inputtedSizes);
-
-
-  });
-});*/
+});

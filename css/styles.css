@@ -1,4 +1,38 @@
-#results{
-  margin-top: 40px;
-  width: 40%;
+body{
+  background-image: url("image1.jpg")
 }
+.well{
+  margin-top: 50px;
+  border-color: #efd4ba;
+  border-radius: 10px;
+  border-width: 10px;
+  font-size: 18px;
+  font-color: #703a08;
+}
+#title{
+  color: #e0840b;
+  margin-top: 35px;
+  }
+#calculate_button{
+  border-color: #996434;
+  background-color: #efdece;
+}
+#customization{
+  color: #edaf76;
+  font-weight: bold;
+  font-size: 38px;
+}
+#order_button{
+  border-color: #996434;
+  background-color: #efdece;
+  width: 15%;
+}
+#ordered_message{
+  margin-top: 30px;
+  width: 30%;
+  font-size: 18px;
+  border-radius: 10px;
+  border-width: 10px;
+  font-color: #703a08;
+  display: none;
+  }

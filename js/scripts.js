@@ -1,10 +1,10 @@
 //business logic
-function Pizza (sizes, meats, toppings, crunch, cost){
+function Pizza (sizes, meats, toppings, crunch){
   this.sizes = sizes;
   this.toppings = toppings;
   this.meats = meats;
   this.crunch = crunch;
-  this.cost = cost;
+  this.cost = 0;
 }
 
 function Order(sizes, meats, toppings, crunch, result){
@@ -46,7 +46,7 @@ $(document).ready(function() {
     console.log(inputtedToppingType);
 
     $("#results").empty();
-    var newPizza = new Pizza(inputtedPizzaSize, inputtedPizzaCrust, inputtedMeatType, inputtedToppingType, 0);
+    var newPizza = new Pizza(inputtedPizzaSize, inputtedPizzaCrust, inputtedMeatType, inputtedToppingType);
     console.log(newPizza);
     $("#results").append("Your Cost is:" + "  " + newPizza.calculateCost() + "$");
     $("#results").show();

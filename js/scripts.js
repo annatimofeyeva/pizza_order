@@ -1,34 +1,56 @@
 //business logic
-function Pizza (sizes, meats, toppings, crunch){
+function Pizza (sizes, meats, toppings, crusts){
   this.sizes = sizes;
   this.toppings = toppings;
   this.meats = meats;
-  this.crunch = crunch;
+  this.crusts = crusts;
   this.cost = 0;
 }
 
-function Order(sizes, meats, toppings, crunch, result){
+function Order(sizes, meats, toppings, crusts, result){
   this.sizes = sizes;
   this.toppings = toppings;
   this.meats = meats;
-  this.crunch = crunch;
+  this.crusts = crusts;
   this.result = result;
 }
+var sizePrices = {
+  small: 10,
+  medium: 13,
+  large: 15
+};
+var crustsPrices = {};
+crustsPrices['handmade pan'] = 2;
+crustsPrices['crunchy thin crust'] = 3;
+crustsPrices['gluten free crust'] = 4;
+var meatPrices = {};
+meatPrices['bacon'] = 4;
+meatPrices['italian sausage'] = 3;
+meatPrices['premium chicken'] = 1;
+var toppingPrices = {
+  "cheddar cheese": 1,
+  "feta cheesee": 1,
+  "mushrooms": 1,
+  "artichoke": 2,
+  "anchovy": 2,
+  "pineapple": 2
+};
 
 Pizza.prototype.calculateCost = function(){
-  if (this.sizes === "large"){
-    this. cost += 15;
-  } else if (this.sizes === "medium"){
-       this.cost += 13;
-  } else {
-       this.cost += 10;
-  }
-    return this.cost
-  };
+  this.cost = 0;
+  var sizePrice = sizePrices[this.sizes];
+  this.cost += sizePrice;
+  var crustPrice = crustsPrices[this.crusts];
+  this.cost += crustPrice;
+  var meatPrice = meatPrices[this.meats];
+  this.cost += meatPrice;
+  var toppingPrice = toppingPrices[this.toppings];
+  this.cost += toppingPrice;
+  return this.cost
+};
 
 Order.prototype.createOrder = function(){
-  if(this.sizes === "large" && this.crunch === "handmade pan" && this.meats === "bacon" && this.topping === "cheddar cheese"){
-  } return "Your Order:   large handmade pan pizza with becon and cheddar cheese"
+    return "Your Order is: " + this.sizes + " size pizza with " + this.crusts + ", " + this.meats + " and " +  this.toppings + "!";
 };
 
 //User interface logic:
@@ -46,9 +68,9 @@ $(document).ready(function() {
     console.log(inputtedToppingType);
 
     $("#results").empty();
-    var newPizza = new Pizza(inputtedPizzaSize, inputtedPizzaCrust, inputtedMeatType, inputtedToppingType);
+    var newPizza = new Pizza(inputtedPizzaSize, inputtedMeatType, inputtedToppingType, inputtedPizzaCrust);
     console.log(newPizza);
-    $("#results").append("Your Cost is:" + "  " + newPizza.calculateCost() + "$");
+    $("#results").append("Cost is:" + "  " + newPizza.calculateCost() + "$");
     $("#results").show();
 
     $("#ordered").empty();
@@ -56,11 +78,9 @@ $(document).ready(function() {
     console.log(newOrder);
     $("#ordered").append(newOrder.createOrder());
     $("#ordered").show();
-
     $("#order_button").click(function(){
     console.log("order");
     $("#ordered_message").show();
-
 });
 });
 });

@@ -46,7 +46,7 @@ Pizza.prototype.calculateCost = function(){
   this.cost += meatPrice;
   var toppingPrice = toppingPrices[this.toppings];
   this.cost += toppingPrice;
-  return this.cost
+  return this.cost;
 };
 
 Order.prototype.createOrder = function(){
